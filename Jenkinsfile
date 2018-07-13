@@ -5,6 +5,11 @@ pipeline{
                 node { label 'master' } 
               }
         stages{
+		stage('file_down') {
+			steps {
+				curl -uadmin:APD7CbxbGBkHHLin -O "http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json"
+			}
+		}
                 stage('code') {
                                 steps {
                                         script{
