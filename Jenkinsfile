@@ -11,8 +11,7 @@ pipeline{
 				sh "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
 			}
 		} 
-	}
-	stages{
+	
                 stage('code') {
 			agent { 
                 			node { label 'master' } 
