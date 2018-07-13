@@ -8,9 +8,9 @@ pipeline{
                 stage('code') {
                                 steps {
                                         script{
-						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
+						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name = "${test.call}"')])])
                                                 bat "cd"
-						File_Name = "${test.call}"
+						
                                                 def props = readJSON file: "$File_Name"
                                                 //bat "echo $props"
                                                 //def list = []
