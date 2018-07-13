@@ -1,11 +1,12 @@
 @Library('share-git-org')_
 
 pipeline{
-        agent { 
-                node { label 'master' } 
-              }
+        agent none
 	stages{
 		stage('file_down') {
+			agent { 
+                			node { label '10_10_4_217' } 
+              			}
 			steps {
 				bat "curl -uadmin:APD7CbxbGBkHHLin -O "http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json"
 			}
@@ -13,6 +14,9 @@ pipeline{
 	}
 	stages{
                 stage('code') {
+			agent { 
+                			node { label 'master' } 
+              			}
                                 steps {
                                         script{
 						 properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
