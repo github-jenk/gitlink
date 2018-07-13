@@ -8,7 +8,7 @@ pipeline{
                 stage('code') {
                                 steps {
                                         script{
-						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name = "${test.call}"')])])
+						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name = Vulnerabilities_10.6.15.20.json')])])
                                                 bat "cd"
 						
                                                 def props = readJSON file: "$File_Name"
