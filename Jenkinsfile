@@ -10,7 +10,7 @@ pipeline{
                                         script{
 						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
                                                 bat "cd"
-						File_Name = 'Vulnerabilities_10.6.15.20.json'
+						File_Name = "${test.call}"
                                                 def props = readJSON file: "$File_Name"
                                                 //bat "echo $props"
                                                 //def list = []
