@@ -7,7 +7,7 @@ pipeline{
 	
                 stage('code') {
 			agent { 
-                			node { label '10_10_4_217' } 
+                			node { label 'master' } 
               			}
                                 steps {
                                         script{
