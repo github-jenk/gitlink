@@ -7,14 +7,14 @@ pipeline{
 	
                 stage('code') {
 			agent { 
-                			node { label 'master' } 
+                			node { label '10_10_4_217' } 
               			}
                                 steps {
                                         script{
 						
 						 properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
-						bat "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
-                                                bat "cd"
+						sh "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
+                                                
 						
                                                 def props = readJSON file: "$File_Name"
                                                 //bat "echo $props"
