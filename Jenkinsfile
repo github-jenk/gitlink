@@ -1,3 +1,5 @@
+@Library('share-git-org')_
+
 pipeline{
         agent { 
                 node { label 'master' } 
