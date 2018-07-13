@@ -13,7 +13,7 @@ pipeline{
                                         script{
 						
 						 properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
-						sh "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
+						bat "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
                                                 
 						
                                                 def props = readJSON file: "$File_Name"
