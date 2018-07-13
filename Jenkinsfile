@@ -8,7 +8,7 @@ pipeline{
                 			node { label '10_10_4_217' } 
               			}
 			steps {
-				sh "curl -uadmin:APD7CbxbGBkHHLin -O "http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json"
+				sh "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
 			}
 		} 
 	}
