@@ -3,14 +3,7 @@
 pipeline{
         agent none
 	stages{
-		stage('file_down') {
-			agent { 
-                			node { label '10_10_4_217' } 
-              			}
-			steps {
-				sh "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
-			}
-		} 
+		
 	
                 stage('code') {
 			agent { 
@@ -18,6 +11,7 @@ pipeline{
               			}
                                 steps {
                                         script{
+						bat "curl -u admin:APD7CbxbGBkHHLin -O \"http://localhost:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
 						 properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
                                                 bat "cd"
 						
