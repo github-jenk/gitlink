@@ -10,6 +10,7 @@ pipeline{
                                         script{
 						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
                                                 bat "cd"
+						File_name = $test.call
                                                 def props = readJSON file: "$File_Name"
                                                 //bat "echo $props"
                                                 //def list = []
