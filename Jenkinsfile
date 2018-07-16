@@ -12,8 +12,7 @@ pipeline{
 						
 						properties([parameters ([string(defaultValue: "", description: 'Enter File Name', name: 'File_Name')])])
 						//bat "curl -u admin:APD7CbxbGBkHHLin -O \"http://10.10.4.162:8081/artifactory/local-my/Vulnerabilities_10.6.15.20.json\""
-                                                test.call "$File_Name"
-						
+                                                test.call "$File_Name"						
                                                 def props = readJSON file: "$File_Name"
                                                 //bat "echo $props"
                                                 //def list = []
@@ -35,10 +34,10 @@ pipeline{
 							<TD>${props.results[iterator].VULNERABILITY_SEVERITY}</TD>
 							<TD>${props.results[iterator].VULNERABILITY_CVE_IDs}</TD>
                                                         </TR>"""
-                                                    } 
+                                                 } 
                                                          Variable_Name += "</table></body></html>"
-                                             }
-                                      }
+                                         }
+                                  }
                      }
              }
 post {
