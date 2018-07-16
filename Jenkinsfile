@@ -26,15 +26,15 @@ pipeline{
 							<TH>VULNERABILITY_SEVERITY</TH>
 							<TH>VULNERABILITY_CVE_IDs</TH>
                                                         </TR>"""
-                                                 for(int i=0; i<size; i++)
+                                                 for(int iterator=0; iterator<size; iterator++)
                                                     {
                                                         Variable_Name += """ 
                                                         <TR>
                                                         <TR ALIGN="CENTER">
-                                                        <TD>${props.results[i].VULNERABILITY_ID}</TD>
-                                                        <TD>${props.results[i].VULNERABILITY_TITLE}</TD>
-							<TD>${props.results[i].VULNERABILITY_SEVERITY}</TD>
-							<TD>${props.results[i].VULNERABILITY_CVE_IDs}</TD>
+                                                        <TD>${props.results[iterator].VULNERABILITY_ID}</TD>
+                                                        <TD>${props.results[iterator].VULNERABILITY_TITLE}</TD>
+							<TD>${props.results[iterator].VULNERABILITY_SEVERITY}</TD>
+							<TD>${props.results[iterator].VULNERABILITY_CVE_IDs}</TD>
                                                         </TR>"""
                                                     } 
                                                          Variable_Name += "</table></body></html>"
