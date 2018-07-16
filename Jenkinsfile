@@ -7,8 +7,8 @@ pipeline{
 	
                 stage('code') {
 			agent { 
-                			node { label 'master' } 
-              			}
+                		node { label 'master' } 
+              		}
                                 steps {
                                         script{
 						
@@ -24,9 +24,9 @@ pipeline{
                                                   Variable_Name += """<TABLE BORDER="1"    WIDTH="50%"   CELLPADDING="10" CELLSPACING="0">
                                                         <TR>
                                                         <TH>VULNERABILITY_ID</TH>
-														<TH>VULNERABILITY_TITLE</TH>
-														<TH>VULNERABILITY_SEVERITY</TH>
-														<TH>VULNERABILITY_CVE_IDs</TH>
+							<TH>VULNERABILITY_TITLE</TH>
+							<TH>VULNERABILITY_SEVERITY</TH>
+							<TH>VULNERABILITY_CVE_IDs</TH>
                                                         </TR>"""
                                                  for(int i=0; i<size; i++)
                                                     {
@@ -35,8 +35,8 @@ pipeline{
                                                         <TR ALIGN="CENTER">
                                                         <TD>${props.results[i].VULNERABILITY_ID}</TD>
                                                         <TD>${props.results[i].VULNERABILITY_TITLE}</TD>
-														<TD>${props.results[i].VULNERABILITY_SEVERITY}</TD>
-														<TD>${props.results[i].VULNERABILITY_CVE_IDs}</TD>
+							<TD>${props.results[i].VULNERABILITY_SEVERITY}</TD>
+							<TD>${props.results[i].VULNERABILITY_CVE_IDs}</TD>
                                                         </TR>"""
                                                     } 
                                                          Variable_Name += "</table></body></html>"
