@@ -27,8 +27,7 @@ pipeline{
 							<TH>VULNERABILITY_CVE_IDs</TH>
                                                         </TR>"""
                                                  for(int iterator=0; iterator<size; iterator++)
-                                                    {
-                                                        Variable_Name += """ 
+                                                    { Variable_Name += """ 
                                                         <TR>
                                                         <TR ALIGN="CENTER">
                                                         <TD>${props.results[iterator].VULNERABILITY_ID}</TD>
@@ -40,8 +39,8 @@ pipeline{
                                                          Variable_Name += "</table></body></html>"
                                              }
                                       }
-                                }
-               }
+                     }
+             }
 post {
         success {
             emailext body: "${Variable_Name}", subject: "${currentBuild.fullDisplayName}", to: 'angupta@qasource.com'
