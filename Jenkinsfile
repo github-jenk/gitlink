@@ -3,9 +3,7 @@
 pipeline{
         agent none
 	stages{
-		
-	
-                stage('code') {
+		stage('code') {
 			agent { 
                 		node { label 'master' } 
               		}
@@ -40,7 +38,7 @@ pipeline{
                                                         </TR>"""
                                                     } 
                                                          Variable_Name += "</table></body></html>"
-                                                 }
+                                             }
                                       }
                                 }
                }
