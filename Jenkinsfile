@@ -1,4 +1,4 @@
-@Library('share-git-org')_
+@Library('share-git-org@master')_
 
 pipeline{
         agent none
